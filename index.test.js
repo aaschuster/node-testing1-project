@@ -18,15 +18,23 @@ describe('[Exercise 1] trimProperties', () => {
 describe('[Exercise 2] trimPropertiesMutation', () => {
   test('[3] returns an object with the properties trimmed', () => {
     const input = {address: "      123 Main St      ", state: "    OH     ", zip: "    1234"};
+    res = utils.trimPropertiesMutation(input);
+    expect(res).toMatchObject({address: "123 Main St", state: "OH", zip: "1234"});
+  })
+  test('[4] the object returned is the exact same one we passed in', () => {
+    const input = {address: "      123 Main St      ", state: "    OH     ", zip: "    1234"};
     utils.trimPropertiesMutation(input);
     expect(input).toMatchObject({address: "123 Main St", state: "OH", zip: "1234"});
   })
-  // test('[4] the object returned is the exact same one we passed in', () => {})
 })
 
-// describe('[Exercise 3] findLargestInteger', () => {
-//   // test('[5] returns the largest number in an array of objects { integer: 2 }', () => {})
-// })
+describe('[Exercise 3] findLargestInteger', () => {
+  test('[5] returns the largest number in an array of objects { integer: 2 }', () => {
+    const input = [{integer: 1}, {integer: 3}, {integer: 6}, {integer: -89}];
+    const res = utils.findLargestInteger(input);
+    expect(res).toBe(6);
+  })
+})
 
 // describe('[Exercise 4] Counter', () => {
 //   let counter
