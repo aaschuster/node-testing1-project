@@ -8,7 +8,11 @@ describe('[Exercise 1] trimProperties', () => {
     const actual = utils.trimProperties(input)
     expect(actual).toEqual(expected)
   })
-  // test('[2] returns a copy, leaving the original object intact', () => {})
+  test('[2] returns a copy, leaving the original object intact', () => {
+    const input = { address: "123 Main St", state: "OH", zip: "1234"};
+    const res = utils.trimProperties(input);
+    expect(input).toMatchObject({ address: "123 Main St", state: "OH", zip: "1234"});
+  })
 })
 
 // describe('[Exercise 2] trimPropertiesMutation', () => {

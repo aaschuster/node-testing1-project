@@ -9,7 +9,9 @@
 function trimProperties(obj) {
   const res = {};
   for( key in obj) {
-    res[key] = obj[key].trim();
+    const item = obj[key];
+    console.log(item);
+    res[key] = item.trim();
   }
   return res;
 }
