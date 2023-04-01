@@ -23,8 +23,8 @@ describe('[Exercise 2] trimPropertiesMutation', () => {
   })
   test('[4] the object returned is the exact same one we passed in', () => {
     const input = {address: "      123 Main St      ", state: "    OH     ", zip: "    1234"};
-    utils.trimPropertiesMutation(input);
-    expect(input).toMatchObject({address: "123 Main St", state: "OH", zip: "1234"});
+    const res = utils.trimPropertiesMutation(input);
+    expect(input).toBe(res);
   })
 })
 
