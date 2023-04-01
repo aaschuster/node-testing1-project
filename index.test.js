@@ -44,8 +44,17 @@ describe('[Exercise 4] Counter', () => {
   test('[6] the FIRST CALL of counter.countDown returns the initial count', () => {
     expect(counter.countDown()).toBe(3);
   })
-  test('[7] the SECOND CALL of counter.countDown returns the initial count minus one', () => {})
-  test('[8] the count eventually reaches zero but does not go below zero', () => {})
+  test('[7] the SECOND CALL of counter.countDown returns the initial count minus one', () => {
+    counter.countDown();
+    expect(counter.countDown()).toBe(2);
+  })
+  test('[8] the count eventually reaches zero but does not go below zero', () => {
+    counter.countDown(); //3
+    counter.countDown(); //2
+    counter.countDown(); //1
+    counter.countDown(); //0
+    expect(counter.countDown()).toBe(0);
+  })
 })
 
 // describe('[Exercise 5] Seasons', () => {
