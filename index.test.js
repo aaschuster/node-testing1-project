@@ -9,16 +9,20 @@ describe('[Exercise 1] trimProperties', () => {
     expect(actual).toEqual(expected)
   })
   test('[2] returns a copy, leaving the original object intact', () => {
-    const input = { address: "123 Main St", state: "OH", zip: "1234"};
+    const input = { address: "     123 Main St      ", state: "OH", zip: "   1234   "};
     const res = utils.trimProperties(input);
-    expect(input).toMatchObject({ address: "123 Main St", state: "OH", zip: "1234"});
+    expect(input).toMatchObject({ address: "     123 Main St      ", state: "OH", zip: "   1234   "});
   })
 })
 
-// describe('[Exercise 2] trimPropertiesMutation', () => {
-//   // test('[3] returns an object with the properties trimmed', () => {})
-//   // test('[4] the object returned is the exact same one we passed in', () => {})
-// })
+describe('[Exercise 2] trimPropertiesMutation', () => {
+  test('[3] returns an object with the properties trimmed', () => {
+    const input = {address: "      123 Main St      ", state: "    OH     ", zip: "    1234"};
+    utils.trimPropertiesMutation(input);
+    expect(input).toMatchObject({address: "123 Main St", state: "OH", zip: "1234"});
+  })
+  // test('[4] the object returned is the exact same one we passed in', () => {})
+})
 
 // describe('[Exercise 3] findLargestInteger', () => {
 //   // test('[5] returns the largest number in an array of objects { integer: 2 }', () => {})
