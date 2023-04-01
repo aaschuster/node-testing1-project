@@ -125,5 +125,8 @@ describe('[Exercise 7] isEvenNumberAsync', () => {
     utils.isEvenNumberAsync(4)
       .then( res => expect(res).toBe(true) );
   })
-  test('[20] resolves false if passed an odd number', () => {})
+  test('[20] resolves false if passed an odd number', () => {
+    utils.isEvenNumberAsync(7)
+      .then( res => expect(res).toBe(false) );
+  })
 })
