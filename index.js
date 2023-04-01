@@ -52,7 +52,7 @@ class Counter {
    * @param {number} initialNumber - the initial state of the count
    */
   constructor(initialNumber) {
-    this.count = initialNumber + 1;
+    this.count = initialNumber;
   }
 
   /**
@@ -69,8 +69,7 @@ class Counter {
    */
   countDown() {
     if(this.count === 0) return 0;
-    this.count -= 1;
-    return this.count;
+    return this.count--;
   }
 }
 
